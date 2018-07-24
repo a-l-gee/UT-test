@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+<script src = "wordApp.js"></script>
+<link rel="stylesheet" href="bulma.min.css">
+</head>
+<body>
+<section class="section" ng-app="wordApp" ng-controller = "wordController">
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Words</p>
+      <p class="subtitle">Enter words here</p>
+      <div class="content">
+        <p>Word x: <input class="control" type="text" ng-model="words.wordx"></p>
+        <p ng-bind="wordx"></p>
+        <br>
+        <p>Word y : <input class="control" type="text" ng-model="words.wordy"></p>
+        <p ng-bind="wordy"></p>
+        <br>
+    </article>
+  </div>
+  <div class="tile is-parent is-8">
+    <article class="tile is-child box">
+      <p class="title">Results</p>
+      <p class="subtitle">{{words.updateWords()}}</p>
+      <div class="content">
+        <svg width = "300" height = "300">{{words.makePie()}}</svg>
+      </div>
+    </article>
+  </div>
+</div>
+
+
+</section>
+</body>
+</html>
